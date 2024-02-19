@@ -22,7 +22,7 @@ const CssLibPreferenceProvider: React.FC<{ children?: React.ReactNode }> = ({
 }) => {
   const [preferredCssLib, setPreferredCssLib] =
     React.useState<CssLib>(DEFAULT_CSS_LIB);
-  const [accentColor, setAccentColor] = React.useState<string>("crimson"); // Default accent color
+  const [accentColor, setAccentColor] = React.useState<string>("blue"); // Default accent color
   const [loading, setLoading] = React.useState<boolean>(true); // Default accent color
 
   const savePreferredCssLib = React.useCallback((lib: unknown) => {

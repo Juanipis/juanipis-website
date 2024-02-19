@@ -1,14 +1,21 @@
 import React from "react";
 import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { IconButton } from "@radix-ui/themes";
+import { Flex, IconButton } from "@radix-ui/themes";
 import Head from "next/head";
+import { useCssLibPreference } from "../../../CssLibPreference";
 
 export const ThemeToggle = () => {
   const { theme, systemTheme, setTheme } = useTheme();
+  const { accentColor, setAccentColor } = useCssLibPreference();
+
+  const changeAccentColor = (value: string) => {
+    console.log("Changing accent color to", value); // Log the color change
+    setAccentColor(value); // Correctly call setAccentColor
+  };
 
   return (
-    <div>
+    <Flex ml="2">
       <Head>
         <style>{`
         :root, .light, .light-theme {
@@ -32,6 +39,11 @@ export const ThemeToggle = () => {
           const newTheme = resolvedTheme === "dark" ? "light" : "dark";
           const newThemeMatchesSystem = newTheme === systemTheme;
           setTheme(newThemeMatchesSystem ? "system" : newTheme);
+          if (newTheme === "dark") {
+            changeAccentColor("crimson");
+          } else if (newTheme === "light") {
+            changeAccentColor("blue");
+          }
         }}
       >
         <SunIcon
@@ -45,6 +57,6 @@ export const ThemeToggle = () => {
           style={{ display: "var(--theme-toggle-moon-icon-display)" }}
         />
       </IconButton>
-    </div>
+    </Flex>
   );
 };

@@ -1,6 +1,7 @@
 import { Button, Flex } from "@radix-ui/themes";
 
 import { ReactNode } from "react";
+import { ThemeToggle } from "../theme-mode/ThemeToggle";
 
 const NavigationButton = ({ children }: { children: ReactNode }) => {
   return (
@@ -12,10 +13,11 @@ const NavigationButton = ({ children }: { children: ReactNode }) => {
 
 const Navigation = () => {
   return (
-    <Flex>
+    <Flex align="center">
       <NavigationButton>Home</NavigationButton>
       <NavigationButton>Projects</NavigationButton>
       <NavigationButton>Contact</NavigationButton>
+      <ThemeToggle />
     </Flex>
   );
 };

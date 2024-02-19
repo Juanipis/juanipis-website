@@ -42,7 +42,6 @@ function App(props: AppProps) {
         value={{ light: "light-theme", dark: "dark-theme" }}
         defaultTheme="light-theme"
       >
-        {/* Wrap Pages with the context provider to access the accent color */}
         <Pages {...props} />
       </ThemeProvider>
     </CssLibPreferenceProvider>
