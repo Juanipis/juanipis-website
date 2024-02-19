@@ -9,6 +9,7 @@ import "@radix-ui/themes/styles.css";
 import { Favicon } from "../../components/Favicon";
 import { useEffect } from "react";
 import { Theme } from "@radix-ui/themes";
+import Navbar from "../../components/ui/navbar/navbar";
 
 function Pages({ Component, pageProps }: AppProps) {
   const { accentColor } = useCssLibPreference();
@@ -26,6 +27,7 @@ function Pages({ Component, pageProps }: AppProps) {
       scaling="95%"
     >
       <Favicon />
+      <Navbar />
       <Component {...pageProps} />
     </Theme>
   );
