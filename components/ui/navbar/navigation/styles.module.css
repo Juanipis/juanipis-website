@@ -1,0 +1,10 @@
+/* Estilos para DropdownMenu */
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Puedes ajustar estos estilos según tus necesidades */

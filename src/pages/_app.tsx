@@ -25,6 +25,7 @@ function Pages({ Component, pageProps }: AppProps) {
       grayColor="sand"
       radius="large"
       scaling="95%"
+      className="flex flex-col h-screen"
     >
       <Favicon />
       <Navbar />
