@@ -2,24 +2,23 @@ import { Inter } from "next/font/google";
 import { Box, Card, Flex, Heading, Text } from "@radix-ui/themes";
 import Image from "next/image";
 import { useCssLibPreference } from "../../components/CssLibPreference";
-import { useEffect } from "react";
 
 import juanipis_cover_photo_dark from "../../public/cover-photo-dark.jpg";
 import juanipis_cover_photo_light from "../../public/cover-photo-light.jpg";
 
-import PythonLogo from "../../components/ui/navbar/logos/pythonLogo";
-import JavaLogo from "../../components/ui/navbar/logos/javaLogo";
-import MongoDBLogo from "../../components/ui/navbar/logos/mongodbLogo";
-import PostgreSQLLogo from "../../components/ui/navbar/logos/postgresqlLogo";
-import GoLogo from "../../components/ui/navbar/logos/goLogo";
+import PythonLogo from "../../components/ui/logos/pythonLogo";
+import JavaLogo from "../../components/ui/logos/javaLogo";
+import MongoDBLogo from "../../components/ui/logos/mongodbLogo";
+import PostgreSQLLogo from "../../components/ui/logos/postgresqlLogo";
+import GoLogo from "../../components/ui/logos/goLogo";
+import SpiderLogo from "../../components/ui/logos/spiderLogo";
+import HikingLogo from "../../components/ui/logos/hikingLogo";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const headingText = "Hello, I'm Juanipis";
-const headingEmojiLight = "👋";
-const headingEmojiDark = "🕷️";
 const subheadingText = "I'm a software developer";
-const descriptionText = `I am a student of Systems Engineering and Computing at EIA University, an institution that has provided me with comprehensive and quality education. I am passionate about software development and technological innovation. 💻`;
+const descriptionText = `I am a student of Systems Engineering and Computing at EIA University, an institution that has provided me with comprehensive and quality education. I am passionate about software development and technological innovation.`;
 
 export default function Home() {
   const { accentColor } = useCssLibPreference();
@@ -34,13 +33,17 @@ export default function Home() {
       >
         <Card>
           <Box className=" min-h-28">
-            <Heading mt="6" ml="4" size="9">
-              {headingText +
-                " " +
-                (accentColor === "crimson"
-                  ? headingEmojiDark
-                  : headingEmojiLight)}
-            </Heading>
+            <Flex mt="6" ml="4" align="center">
+              <Heading mr="5" size="9">
+                {headingText}
+              </Heading>
+              {accentColor === "crimson" ? (
+                <SpiderLogo fill="#5C1839" width="70" height="70" />
+              ) : (
+                <HikingLogo fill="#004074" width="70" height="70" />
+              )}
+            </Flex>
+
             <Box mt="5">
               <Text ml="4" size="6">
                 {subheadingText}
