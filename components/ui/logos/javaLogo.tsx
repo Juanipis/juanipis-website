@@ -16,6 +16,7 @@ const JavaLogo: React.FC<SvgProps> = ({
     enableBackground="new 0 0 512 512"
     xmlSpace="preserve"
   >
+    <title>Java logo</title>
     <g id="5151e0c8492e5103c096af88a51e8d81">
       <path
         display="inline"

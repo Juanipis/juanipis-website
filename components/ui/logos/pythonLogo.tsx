@@ -13,7 +13,7 @@ const PythonLogo: React.FC<SvgProps> = ({
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
   >
-    <title>Python</title>
+    <title>Python logo</title>
     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         id="Dribbble-Light-Preview"
