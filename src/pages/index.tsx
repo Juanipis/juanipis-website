@@ -15,11 +15,11 @@ import SpiderLogo from "../../components/ui/logos/spiderLogo";
 import HikingLogo from "../../components/ui/logos/hikingLogo";
 import FlutterLogo from "../../components/ui/logos/flutterLogo";
 
-const inter = Inter({ subsets: ["latin"] });
-
 const headingText = "Hello, I'm Juanipis";
 const subheadingText = "I'm a software developer";
 const descriptionText = `I am a student of Systems Engineering and Computing at EIA University, an institution that has provided me with comprehensive and quality education. I am passionate about software development and technological innovation.`;
+const logoDarkColor = "#B0436E";
+const logoLightColor = "#004074";
 
 export default function Home() {
   const { accentColor } = useCssLibPreference();
@@ -39,9 +39,9 @@ export default function Home() {
                 {headingText}
               </Heading>
               {accentColor === "crimson" ? (
-                <SpiderLogo fill="#5C1839" width="70" height="70" />
+                <SpiderLogo fill={logoDarkColor} width="70" height="70" />
               ) : (
-                <HikingLogo fill="#004074" width="70" height="70" />
+                <HikingLogo fill={logoLightColor} width="70" height="70" />
               )}
             </Flex>
 
@@ -56,39 +56,63 @@ export default function Home() {
           </Box>
           <Box>
             <Flex direction="row" align="center">
-              <Text size="5" ml="4" align="center" mr="8">
+              <Text
+                style={{ width: "50%" }}
+                size="5"
+                ml="2"
+                align="center"
+                mr="8"
+              >
                 I have experience in:
               </Text>
-              <PythonLogo
-                fill={accentColor === "crimson" ? "#5C1839" : "#004074"}
-                width="50"
-                height="50"
-              />
-              <JavaLogo
-                fill={accentColor === "crimson" ? "#5C1839" : "#004074"}
-                width="50"
-                height="50"
-              />
-              <MongoDBLogo
-                fill={accentColor === "crimson" ? "#5C1839" : "#004074"}
-                width="50"
-                height="50"
-              />
-              <PostgreSQLLogo
-                fill={accentColor === "crimson" ? "#5C1839" : "#004074"}
-                width="50"
-                height="50"
-              />
-              <GoLogo
-                fill={accentColor === "crimson" ? "#5C1839" : "#004074"}
-                width="70"
-                height="70"
-              />
-              <FlutterLogo
-                fill={accentColor === "crimson" ? "#5C1839" : "#004074"}
-                width="50"
-                height="50"
-              />
+              <Flex
+                direction="row"
+                align="center"
+                justify="between"
+                width="100%"
+                mr="6"
+              >
+                <PythonLogo
+                  fill={accentColor === "crimson" ? logoDarkColor : "#004074"}
+                  width="50"
+                  height="50"
+                />
+                <JavaLogo
+                  fill={
+                    accentColor === "crimson" ? logoDarkColor : logoLightColor
+                  }
+                  width="50"
+                  height="50"
+                />
+                <MongoDBLogo
+                  fill={
+                    accentColor === "crimson" ? logoDarkColor : logoLightColor
+                  }
+                  width="50"
+                  height="50"
+                />
+                <PostgreSQLLogo
+                  fill={
+                    accentColor === "crimson" ? logoDarkColor : logoLightColor
+                  }
+                  width="50"
+                  height="50"
+                />
+                <GoLogo
+                  fill={
+                    accentColor === "crimson" ? logoDarkColor : logoLightColor
+                  }
+                  width="70"
+                  height="70"
+                />
+                <FlutterLogo
+                  fill={
+                    accentColor === "crimson" ? logoDarkColor : logoLightColor
+                  }
+                  width="50"
+                  height="50"
+                />
+              </Flex>
             </Flex>
           </Box>
         </Card>

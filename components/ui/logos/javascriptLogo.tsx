@@ -13,7 +13,7 @@ const JavascriptLogo: React.FC<SvgProps> = ({
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
   >
-    <title>Javascript icon</title>
+    <title>Javascript logo</title>
     <defs></defs>
     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g

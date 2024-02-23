@@ -10,6 +10,9 @@ interface ProjectCardProps {
   url: string;
 }
 
+const logoDarkColor = "#B0436E";
+const logoLightColor = "#004074";
+
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
@@ -20,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const { accentColor } = useCssLibPreference();
 
   return (
-    <Card size="2" style={{ maxWidth: 320, maxHeight: 350 }}>
+    <Card size="2" style={{ width: 320, maxHeight: 350 }}>
       <Inset clip="padding-box" side="top" pb="current">
         <Image
           src={image}
@@ -53,20 +56,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 key={index}
                 height="20"
                 width="20"
-                fill={accentColor === "crimson" ? "#5C1839" : "#004074"}
+                fill={
+                  accentColor === "crimson" ? logoDarkColor : logoLightColor
+                }
               />
             ))}
           </Flex>
           <Text size="2" ml="3">
             <Strong>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: accentColor === "crimson" ? "#5C1839" : "#004074",
-                }}
-              >
+              <a href={url} target="_blank" rel="noopener noreferrer">
                 View project
               </a>
             </Strong>
