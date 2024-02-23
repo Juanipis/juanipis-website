@@ -23,7 +23,6 @@ const SpiderLogo: React.FC<SvgProps> = ({
       viewBox="0 0 512 512"
       xmlSpace="preserve"
     >
-      <title>Spider icon</title>
       <g>
         <path
           d="M405.295,255.128l-80.064-18.658l81.293-6.766l64.205-64.92l24.038-104.024l-17.533-3.906l-28.781,95.496

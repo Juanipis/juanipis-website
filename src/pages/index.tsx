@@ -13,6 +13,7 @@ import PostgreSQLLogo from "../../components/ui/logos/postgresqlLogo";
 import GoLogo from "../../components/ui/logos/goLogo";
 import SpiderLogo from "../../components/ui/logos/spiderLogo";
 import HikingLogo from "../../components/ui/logos/hikingLogo";
+import FlutterLogo from "../../components/ui/logos/flutterLogo";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -82,6 +83,11 @@ export default function Home() {
                 fill={accentColor === "crimson" ? "#5C1839" : "#004074"}
                 width="70"
                 height="70"
+              />
+              <FlutterLogo
+                fill={accentColor === "crimson" ? "#5C1839" : "#004074"}
+                width="50"
+                height="50"
               />
             </Flex>
           </Box>
