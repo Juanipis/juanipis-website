@@ -3,18 +3,23 @@ import { Button, Flex } from "@radix-ui/themes";
 import { ReactNode } from "react";
 import { ThemeToggle } from "../theme-mode/ThemeToggle";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface NavigationButtonProps {
   children: ReactNode;
   href: string;
 }
+
 const NavigationButton: React.FC<NavigationButtonProps> = ({
   children,
   href,
 }) => {
+  const router = useRouter();
+  const variant = router.pathname === href ? "soft" : "surface";
+
   return (
     <Link href={href}>
-      <Button mr="1" ml="1" variant="surface">
+      <Button mr="1" ml="1" variant={variant}>
         {children}
       </Button>
     </Link>
