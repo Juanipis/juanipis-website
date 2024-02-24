@@ -10,7 +10,7 @@ const Navbar = () => {
   const { accentColor } = useCssLibPreference();
 
   return (
-    <Card variant="surface" mt="3" mr="2" ml="2">
+    <Card variant="surface" mt="3" mr="2" ml="2" style={{ height: "300" }}>
       <Flex justify="between" ml="5" mr="5" mt="3" align="center" mb="3">
         <Heading size="6">Juanipis</Heading>
         <Navigation />
