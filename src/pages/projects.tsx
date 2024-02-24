@@ -16,6 +16,8 @@ import FastapiLogo from "../../components/ui/logos/fastapiLogo";
 import SpringBootLogo from "../../components/ui/logos/springbootLogo";
 import NextjsLogo from "../../components/ui/logos/nextjsLogo";
 import TypescriptLogo from "../../components/ui/logos/typescriptLogo";
+import RaspberryPiLogo from "../../components/ui/logos/raspberrypiLogo";
+import IBMCloudLogo from "../../components/ui/logos/ibmcloudLogo";
 
 function Projects() {
   return (
@@ -64,6 +66,24 @@ function Projects() {
       />
 
       <ProjectCard
+        title="Clon Apptibiograma 📱"
+        description="Clon de la aplicación de apptibiograma para analizar antibiogramas."
+        image="/banner_images/apptibiograma.webp"
+        technologies={[FlutterLogo, JavaLogo, SpringBootLogo, PostgreSQLLogo]}
+        url={"https://github.com/Juanipis/proyecto_medico"}
+      />
+
+      <ProjectCard
+        title="Mi contratista CLI 🛠"
+        description="CLI para gestionar tareas de un contratista."
+        image="/banner_images/mi_contratista_cli.webp"
+        technologies={[PythonLogo]}
+        url={
+          "https://github.com/Juanipis/mi_contratista_cli?tab=readme-ov-file#mi-contratista-cli"
+        }
+      />
+
+      <ProjectCard
         title="REST API Asesinatos Spring Boot 🕵️‍♂️"
         description="REST API para consultar una base de datos de postgresql."
         image="/banner_images/asesinatos_spring_boot.webp"
@@ -86,11 +106,25 @@ function Projects() {
         url={"https://github.com/Enano2001/Polifasico"}
       />
       <ProjectCard
+        title="Análisis de personalidad IBM 🧠"
+        description="Análisis de personalidad con IBM Personality Insight."
+        image="/banner_images/personality_insight.webp"
+        technologies={[PythonLogo, IBMCloudLogo]}
+        url={"https://github.com/Juanipis/Analisis-de-personalidad"}
+      />
+      <ProjectCard
         title="Pychat 🐍"
         description="Chat en python con sockets."
         image="/banner_images/pychat.webp"
         technologies={[PythonLogo]}
         url={"https://github.com/Juanipis/Pychat"}
+      />
+      <ProjectCard
+        title="Quimera Eyes 👁"
+        description="Programación en bloques basada en dispositivos USB para discapacitados visuales"
+        image="/banner_images/quimera_eyes.webp"
+        technologies={[PythonLogo, LinuxLogo, RaspberryPiLogo]}
+        url={"https://github.com/Juanipis/QuimeraEyes"}
       />
     </Flex>
   );
