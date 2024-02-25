@@ -17,15 +17,8 @@ const githubUrl = "https://github.com/Juanipis";
 const email = "juanipis@gmail.com";
 function Contacts() {
   return (
-    <Flex
-      direction="row"
-      justify="center"
-      align="center"
-      grow="1"
-      mt="5"
-      gap="7"
-    >
-      <Card style={{ maxWidth: 800 }}>
+    <Flex direction="row" justify="center" align="center" grow="1" gap="7">
+      <Card size="5">
         <Flex gap="3" align="center" wrap="wrap" justify="center">
           <Box style={{ maxWidth: 300 }}>
             <Heading size="9">{contactHeading}</Heading>
