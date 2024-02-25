@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import { Box, Card, Flex, Heading, Text } from "@radix-ui/themes";
 import Image from "next/image";
 import { useCssLibPreference } from "../../components/CssLibPreference";
@@ -6,14 +5,16 @@ import { useCssLibPreference } from "../../components/CssLibPreference";
 import juanipis_cover_photo_dark from "../../public/cover-photo-dark.jpg";
 import juanipis_cover_photo_light from "../../public/cover-photo-light.jpg";
 
-import PythonLogo from "../../components/ui/logos/pythonLogo";
-import JavaLogo from "../../components/ui/logos/javaLogo";
-import MongoDBLogo from "../../components/ui/logos/mongodbLogo";
-import PostgreSQLLogo from "../../components/ui/logos/postgresqlLogo";
-import GoLogo from "../../components/ui/logos/goLogo";
-import SpiderLogo from "../../components/ui/logos/spiderLogo";
-import HikingLogo from "../../components/ui/logos/hikingLogo";
-import FlutterLogo from "../../components/ui/logos/flutterLogo";
+import {
+  GoLogo,
+  JavaLogo,
+  MongoDBLogo,
+  PostgreSQLLogo,
+  PythonLogo,
+  FlutterLogo,
+  SpiderLogo,
+  HikingLogo,
+} from "../../components/ui/logos/logos";
 
 const headingText = "Hello, I'm Juanipis";
 const subheadingText = "I'm a software developer";

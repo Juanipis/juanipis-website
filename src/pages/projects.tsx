@@ -1,23 +1,25 @@
 import { Flex } from "@radix-ui/themes";
-import PostgreSQLLogo from "../../components/ui/logos/postgresqlLogo";
-import PythonLogo from "../../components/ui/logos/pythonLogo";
+import {
+  PostgreSQLLogo,
+  PythonLogo,
+  MongoDBLogo,
+  DockerLogo,
+  HTMLLogo,
+  JavascriptLogo,
+  FirebaseLogo,
+  OpenAILogo,
+  LinuxLogo,
+  AWSLogo,
+  FlutterLogo,
+  JavaLogo,
+  FastapiLogo,
+  SpringBootLogo,
+  NextjsLogo,
+  TypescriptLogo,
+  RaspberryPiLogo,
+  IBMCloudLogo,
+} from "../../components/ui/logos/logos";
 import ProjectCard from "../../components/ui/projectCard/projectCard";
-import MongoDBLogo from "../../components/ui/logos/mongodbLogo";
-import DockerLogo from "../../components/ui/logos/dockerLogo";
-import HTMLLogo from "../../components/ui/logos/htmlLogo";
-import JavascriptLogo from "../../components/ui/logos/javascriptLogo";
-import FirebaseLogo from "../../components/ui/logos/firebaseLogo";
-import OpenAILogo from "../../components/ui/logos/openaiLogo";
-import LinuxLogo from "../../components/ui/logos/linuxLogo";
-import AWSLogo from "../../components/ui/logos/awsLogo";
-import FlutterLogo from "../../components/ui/logos/flutterLogo";
-import JavaLogo from "../../components/ui/logos/javaLogo";
-import FastapiLogo from "../../components/ui/logos/fastapiLogo";
-import SpringBootLogo from "../../components/ui/logos/springbootLogo";
-import NextjsLogo from "../../components/ui/logos/nextjsLogo";
-import TypescriptLogo from "../../components/ui/logos/typescriptLogo";
-import RaspberryPiLogo from "../../components/ui/logos/raspberrypiLogo";
-import IBMCloudLogo from "../../components/ui/logos/ibmcloudLogo";
 
 function Projects() {
   return (
