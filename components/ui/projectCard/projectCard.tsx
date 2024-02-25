@@ -1,6 +1,7 @@
 import { Card, Flex, Inset, Strong, Text } from "@radix-ui/themes";
 import { useCssLibPreference } from "../../CssLibPreference";
 import Image from "next/image";
+import { logoDarkColor, logoLightColor } from "../colors/logoColors";
 
 interface ProjectCardProps {
   title: string;
@@ -9,9 +10,6 @@ interface ProjectCardProps {
   technologies: React.FC<SvgProps>[];
   url: string;
 }
-
-const logoDarkColor = "#B0436E";
-const logoLightColor = "#004074";
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,

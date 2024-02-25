@@ -15,12 +15,14 @@ import {
   SpiderLogo,
   HikingLogo,
 } from "../../components/ui/logos/logos";
+import {
+  logoDarkColor,
+  logoLightColor,
+} from "../../components/ui/colors/logoColors";
 
 const headingText = "Hello, I'm Juanipis";
 const subheadingText = "I'm a software developer";
 const descriptionText = `I am a student of Systems Engineering and Computing at EIA University, an institution that has provided me with comprehensive and quality education. I am passionate about software development and technological innovation.`;
-const logoDarkColor = "#B0436E";
-const logoLightColor = "#004074";
 
 export default function Home() {
   const { accentColor } = useCssLibPreference();
@@ -77,7 +79,9 @@ export default function Home() {
               wrap="wrap"
             >
               <PythonLogo
-                fill={accentColor === "crimson" ? logoDarkColor : "#004074"}
+                fill={
+                  accentColor === "crimson" ? logoDarkColor : logoLightColor
+                }
                 width="50"
                 height="50"
               />

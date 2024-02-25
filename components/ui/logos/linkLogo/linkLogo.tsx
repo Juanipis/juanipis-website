@@ -1,4 +1,5 @@
 import { useCssLibPreference } from "../../../CssLibPreference";
+import { logoDarkColor, logoLightColor } from "../../colors/logoColors";
 
 interface LinkLogoProps {
   href: string;
@@ -6,9 +7,6 @@ interface LinkLogoProps {
   height: string;
   logo: React.FC<SvgProps>;
 }
-
-const logoDarkColor = "#B0436E";
-const logoLightColor = "#004074";
 
 const LinkLogo: React.FC<LinkLogoProps> = ({
   href,
