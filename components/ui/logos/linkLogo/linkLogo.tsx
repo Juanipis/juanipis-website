@@ -6,6 +6,7 @@ interface LinkLogoProps {
   width: string;
   height: string;
   logo: React.FC<SvgProps>;
+  paddingBottom?: string; // Add this line
 }
 
 const LinkLogo: React.FC<LinkLogoProps> = ({
@@ -13,10 +14,16 @@ const LinkLogo: React.FC<LinkLogoProps> = ({
   width,
   height,
   logo: Logo,
+  paddingBottom, // Add this line
 }) => {
   const { accentColor } = useCssLibPreference();
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ paddingBottom }} // Add this line
+    >
       <Logo
         fill={accentColor === "crimson" ? logoDarkColor : logoLightColor}
         width={width}
