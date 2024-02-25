@@ -19,3 +19,7 @@ export { default as IBMCloudLogo } from "./ibmcloudLogo";
 export { default as GoLogo } from "./goLogo";
 export { default as SpiderLogo } from "./spiderLogo";
 export { default as HikingLogo } from "./hikingLogo";
+export { default as LinkedInLogo } from "./linkedinLogo";
+export { default as TwitterXLogo } from "./twitterXLogo";
+export { default as InstagramLogo } from "./instagramLogo";
+export { default as GitHubLogo } from "./githubLogo";

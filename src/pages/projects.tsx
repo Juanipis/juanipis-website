@@ -32,7 +32,7 @@ function Projects() {
         url={"https://github.com/Juanipis/backend_tienda_online"}
       />
       <ProjectCard
-        title="LearnIoT 🌐"
+        title="AprendIoT 🌐"
         description="Educational website about IoT. It was an engineering project at EIA."
         image="/banner_images/aprendiot.webp"
         technologies={[HTMLLogo, JavascriptLogo, FirebaseLogo]}
@@ -76,7 +76,7 @@ function Projects() {
       />
 
       <ProjectCard
-        title="My Contractor CLI 🛠"
+        title="Mi contratista CLI 🛠"
         description="CLI to manage a contractor's tasks."
         image="/banner_images/mi_contratista_cli.webp"
         technologies={[PythonLogo]}
@@ -122,7 +122,7 @@ function Projects() {
         url={"https://github.com/Juanipis/Pychat"}
       />
       <ProjectCard
-        title="Chimera Eyes 👁"
+        title="Quimera Eyes 👁"
         description="Block programming based on USB devices for visually impaired people."
         image="/banner_images/quimera_eyes.webp"
         technologies={[PythonLogo, LinuxLogo, RaspberryPiLogo]}
