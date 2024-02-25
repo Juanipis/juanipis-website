@@ -30,7 +30,7 @@ const Navigation = () => {
   return (
     <Flex align="center">
       <NavigationButton href="/">Home</NavigationButton>
-      <NavigationButton href="/about-me">About me</NavigationButton>
+      <NavigationButton href="/about-me">About</NavigationButton>
       <NavigationButton href="/projects">Projects</NavigationButton>
       <NavigationButton href="/contact">Contact</NavigationButton>
       <ThemeToggle />
