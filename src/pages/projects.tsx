@@ -25,29 +25,29 @@ function Projects() {
   return (
     <Flex ml="3" mr="2" mt="5" gap="7" justify="center" wrap="wrap">
       <ProjectCard
-        title={"Backend para una tienda online 🛒"}
-        description={"Backend necesario para una tienda online."}
+        title={"Backend for an Online Store 🛒"}
+        description={"Necessary backend for an online store."}
         image="/banner_images/backend_tienda_online.webp"
         technologies={[PythonLogo, PostgreSQLLogo, MongoDBLogo, DockerLogo]}
         url={"https://github.com/Juanipis/backend_tienda_online"}
       />
       <ProjectCard
-        title="AprendIoT 🌐"
-        description="Web educativa sobre IoT. Fue un proyecto de ingeniería 1 en la EIA."
+        title="LearnIoT 🌐"
+        description="Educational website about IoT. It was an engineering project at EIA."
         image="/banner_images/aprendiot.webp"
         technologies={[HTMLLogo, JavascriptLogo, FirebaseLogo]}
         url={"https://github.com/Juanipis/AprendIoT"}
       />
       <ProjectCard
         title="Dwalle 🤖"
-        description="Bot conectado a GPT-3.5 para chatear sobre productos de una tienda online."
+        description="Bot connected to GPT-3.5 to chat about products of an online store."
         image="/banner_images/dwalle.webp"
         technologies={[PythonLogo, DockerLogo, OpenAILogo, LinuxLogo]}
         url={"https://github.com/alejop153/DWALLE"}
       />
       <ProjectCard
-        title="Harry Potter Rekognition (aws) 📱"
-        description="Selecciona personaje de harry potter, subir una imagen y si coincide guardarla"
+        title="Harry Potter Recognition (aws) 📱"
+        description="Select a Harry Potter character, upload an image and if it matches, save it."
         image="/banner_images/app_flutter_aws_rekognition.webp"
         technologies={[
           PythonLogo,
@@ -60,24 +60,24 @@ function Projects() {
       />
 
       <ProjectCard
-        title="Pagina web personal 🌐"
-        description="Pagina web personal con un diseño aracnido en next.js."
+        title="Personal Website 🌐"
+        description="Personal website with an arachnid design in Next.js."
         image="/banner_images/personal_webpage.webp"
         technologies={[NextjsLogo, TypescriptLogo, HTMLLogo]}
         url={"https://github.com/Juanipis/personal-nextjs-radix-page"}
       />
 
       <ProjectCard
-        title="Clon Apptibiograma 📱"
-        description="Clon de la aplicación de apptibiograma para analizar antibiogramas."
+        title="Apptibiogram Clone 📱"
+        description="Clone of the Apptibiogram app for analyzing antibiograms."
         image="/banner_images/apptibiograma.webp"
         technologies={[FlutterLogo, JavaLogo, SpringBootLogo, PostgreSQLLogo]}
         url={"https://github.com/Juanipis/proyecto_medico"}
       />
 
       <ProjectCard
-        title="Mi contratista CLI 🛠"
-        description="CLI para gestionar tareas de un contratista."
+        title="My Contractor CLI 🛠"
+        description="CLI to manage a contractor's tasks."
         image="/banner_images/mi_contratista_cli.webp"
         technologies={[PythonLogo]}
         url={
@@ -86,44 +86,44 @@ function Projects() {
       />
 
       <ProjectCard
-        title="REST API Asesinatos Spring Boot 🕵️‍♂️"
-        description="REST API para consultar una base de datos de postgresql."
+        title="Murder REST API Spring Boot 🕵️‍♂️"
+        description="REST API to consult a PostgreSQL database."
         image="/banner_images/asesinatos_spring_boot.webp"
         technologies={[JavaLogo, SpringBootLogo, PostgreSQLLogo]}
         url={"https://github.com/Juanipis/asesinatos-springboot"}
       />
 
       <ProjectCard
-        title="Codificador huffman 💾"
-        description="Codificador huffman en java para comprimir y descomprimir textos."
+        title="Huffman Encoder 💾"
+        description="Huffman encoder in Java to compress and decompress texts."
         image="/banner_images/huffman.webp"
         technologies={[JavaLogo]}
         url={"https://github.com/Juanipis/Huffman"}
       />
       <ProjectCard
-        title="Metodo de ordenamiento polifasico 📊"
-        description="Metodo de ordenamiento polifasico en java."
+        title="Polyphasic Sorting Method 📊"
+        description="Polyphasic sorting method in Java."
         image="/banner_images/polifasico.webp"
         technologies={[JavaLogo]}
         url={"https://github.com/Enano2001/Polifasico"}
       />
       <ProjectCard
-        title="Análisis de personalidad IBM 🧠"
-        description="Análisis de personalidad con IBM Personality Insight."
+        title="IBM Personality Analysis 🧠"
+        description="Personality analysis with IBM Personality Insights."
         image="/banner_images/personality_insight.webp"
         technologies={[PythonLogo, IBMCloudLogo]}
         url={"https://github.com/Juanipis/Analisis-de-personalidad"}
       />
       <ProjectCard
         title="Pychat 🐍"
-        description="Chat en python con sockets."
+        description="Chat in Python using sockets."
         image="/banner_images/pychat.webp"
         technologies={[PythonLogo]}
         url={"https://github.com/Juanipis/Pychat"}
       />
       <ProjectCard
-        title="Quimera Eyes 👁"
-        description="Programación en bloques basada en dispositivos USB para discapacitados visuales"
+        title="Chimera Eyes 👁"
+        description="Block programming based on USB devices for visually impaired people."
         image="/banner_images/quimera_eyes.webp"
         technologies={[PythonLogo, LinuxLogo, RaspberryPiLogo]}
         url={"https://github.com/Juanipis/QuimeraEyes"}
