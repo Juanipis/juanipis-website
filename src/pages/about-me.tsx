@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Button,
   Card,
@@ -19,7 +20,8 @@ import {
   ExperienceItem,
   ExperienceLine,
 } from "../../components/ui/timeline/timelineVertical";
-
+import juanipis_avatar_dark from "../../public/avatar_juanipis_dark.jpg";
+import juanipis_avatar from "../../public/avatar_juanipis.jpg";
 const name = "Juan Pablo Díaz Correa";
 const linkdeinUrl = "https://www.linkedin.com/in/juanipis/";
 const email = "juanipis@gmail.com";
@@ -35,6 +37,21 @@ function AboutMe() {
       gap="7"
     >
       <Card style={{ maxWidth: "800px" }}>
+        <Flex direction="row" justify="center">
+          <Box>
+            <Avatar
+              size="7"
+              src={
+                accentColor === "crimson"
+                  ? juanipis_avatar_dark.src
+                  : juanipis_avatar.src
+              }
+              radius="full"
+              fallback="T"
+            />
+          </Box>
+        </Flex>
+
         <Heading size="8" align="center">
           {name}
         </Heading>

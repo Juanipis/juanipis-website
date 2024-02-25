@@ -2,7 +2,7 @@ import { Card, Flex, Heading } from "@radix-ui/themes";
 import * as Avatar from "@radix-ui/react-avatar";
 import styles from "./styles.module.css";
 import juanipis_avatar from "../../../public/avatar_juanipis.jpg";
-import juanipis_avatar_dark from "../../../public/avatar__juanipis_dark.jpg";
+import juanipis_avatar_dark from "../../../public/avatar_juanipis_dark.jpg";
 import Navigation from "./navigation/navigation";
 import { useCssLibPreference } from "../../CssLibPreference";
 
