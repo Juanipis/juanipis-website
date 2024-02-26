@@ -6,6 +6,7 @@ import {
   GitHubLogo,
 } from "../../components/ui/logos/logos";
 import LinkLogo from "../../components/ui/logos/linkLogo/linkLogo";
+import Head from "next/head";
 
 const contactHeading = "I'm here";
 const contactText =
@@ -17,50 +18,56 @@ const githubUrl = "https://github.com/Juanipis";
 const email = "juanipis@gmail.com";
 function Contacts() {
   return (
-    <Flex direction="row" justify="center" align="center" grow="1" gap="7">
-      <Card size="5">
-        <Flex gap="3" align="center" wrap="wrap" justify="center">
-          <Box style={{ maxWidth: 300 }}>
-            <Heading size="9">{contactHeading}</Heading>
-            <Text size="6">{contactText}</Text>
-          </Box>
-          <Flex direction="column" align="center">
-            <Heading>Social media</Heading>
-            <Flex align="center" justify="between" gap="2">
-              <LinkLogo
-                href={githubUrl}
-                width="30"
-                height="30"
-                logo={GitHubLogo}
-              />
-              <LinkLogo
-                href={linkdeinUrl}
-                width="30"
-                height="30"
-                logo={LinkedInLogo}
-              />
-              <LinkLogo
-                href={xTwitterUrl}
-                width="23"
-                height="23"
-                logo={TwitterXLogo}
-              />
-              <LinkLogo
-                href={instagramUrl}
-                width="30"
-                height="30"
-                logo={InstagramLogo}
-              />
-            </Flex>
+    <>
+      <Head>
+        <title>Juanipis | Contact</title>
+        <meta name="description" content="Juanipis personal website, contact" />
+      </Head>
+      <Flex direction="row" justify="center" align="center" grow="1" gap="7">
+        <Card size="5">
+          <Flex gap="3" align="center" wrap="wrap" justify="center">
+            <Box style={{ maxWidth: 300 }}>
+              <Heading size="9">{contactHeading}</Heading>
+              <Text size="6">{contactText}</Text>
+            </Box>
+            <Flex direction="column" align="center">
+              <Heading>Social media</Heading>
+              <Flex align="center" justify="between" gap="2">
+                <LinkLogo
+                  href={githubUrl}
+                  width="30"
+                  height="30"
+                  logo={GitHubLogo}
+                />
+                <LinkLogo
+                  href={linkdeinUrl}
+                  width="30"
+                  height="30"
+                  logo={LinkedInLogo}
+                />
+                <LinkLogo
+                  href={xTwitterUrl}
+                  width="23"
+                  height="23"
+                  logo={TwitterXLogo}
+                />
+                <LinkLogo
+                  href={instagramUrl}
+                  width="30"
+                  height="30"
+                  logo={InstagramLogo}
+                />
+              </Flex>
 
-            <Text mt="3" align="center">
-              <Strong>Send me an email at</Strong>
-            </Text>
-            <a href={"mailto:" + email}>{email}</a>
+              <Text mt="3" align="center">
+                <Strong>Send me an email at</Strong>
+              </Text>
+              <a href={"mailto:" + email}>{email}</a>
+            </Flex>
           </Flex>
-        </Flex>
-      </Card>
-    </Flex>
+        </Card>
+      </Flex>
+    </>
   );
 }
 
