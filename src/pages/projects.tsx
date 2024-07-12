@@ -21,6 +21,7 @@ import {
 } from "../../components/ui/logos/logos";
 import ProjectCard from "../../components/ui/projectCard/projectCard";
 import Head from "next/head";
+import NestjsLogo from "../../components/ui/logos/nestjsLogo";
 
 function Projects() {
   return (
@@ -33,6 +34,27 @@ function Projects() {
         />
       </Head>
       <Flex ml="3" mr="2" mt="5" gap="7" justify="center" wrap="wrap">
+      <ProjectCard
+          title={"Dance club Comuna 8 🕺"}
+          description={"A web app for a dance club in Medellín."}
+          image="/banner_images/dance_club.webp"
+          technologies={[FlutterLogo, FirebaseLogo]}
+          url={"https://github.com/Juanipis/dance_club_comuna_8"}
+        />
+        <ProjectCard
+          title={"Miyuki webpage 🐈"}
+          description={"An online store for a miyuki products brand."}
+          image="/banner_images/miyuki.webp"
+          technologies={[NextjsLogo]}
+          url={"https://github.com/pablomesa08/miyuki-webpage"}
+        />
+        <ProjectCard
+          title={"Miyuki backend 🐈"}
+          description={"A backend for a online miyuki products brand."}
+          image="/banner_images/miyuki-backend.webp"
+          technologies={[NestjsLogo,PostgreSQLLogo]}
+          url={"https://github.com/pablomesa08/backend-miyuki"}
+        />
         <ProjectCard
           title={"Backend for an Online Store 🛒"}
           description={"Necessary backend for an online store."}

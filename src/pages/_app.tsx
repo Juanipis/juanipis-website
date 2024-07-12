@@ -37,6 +37,7 @@ function Pages({ Component, pageProps }: AppProps) {
 function App(props: AppProps) {
   return (
     <CssLibPreferenceProvider>
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <ThemeProvider
         disableTransitionOnChange
         attribute="class"
