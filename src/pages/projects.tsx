@@ -56,6 +56,13 @@ function Projects() {
           url={"https://github.com/pablomesa08/backend-miyuki"}
         />
         <ProjectCard
+          title={"Who's that Pokémon? 🤔"}
+          description={"Guess the Pokémon by its silhouette."}
+          image="/banner_images/pokemon.webp"
+          technologies={[FlutterLogo]}
+          url={"https://github.com/Juanipis/pokemon_game"}
+        />
+        <ProjectCard
           title={"Backend for an Online Store 🛒"}
           description={"Necessary backend for an online store."}
           image="/banner_images/backend_tienda_online.webp"
