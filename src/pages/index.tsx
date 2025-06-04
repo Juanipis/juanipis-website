@@ -1,4 +1,5 @@
-import { Box, Card, Flex, Heading, Text } from "@radix-ui/themes";
+import React from 'react';
+import { Box, Card, Flex, Heading, Text, Separator } from "@radix-ui/themes";
 import Image from "next/image";
 import { useCssLibPreference } from "../../components/CssLibPreference";
 import { motion } from "framer-motion";
@@ -99,6 +100,8 @@ export default function Home() {
       y: -5,
       transition: {
         duration: 0.2,
+        type: "spring",
+        stiffness: 300,
       },
     },
   };
@@ -125,7 +128,7 @@ export default function Home() {
         >
           <motion.div variants={itemVariants}>
             <Card>
-              <Box className=" min-h-28">
+              <Box className="min-h-28">
                 <Flex mt="6" ml="4" align="center">
                   <motion.div variants={itemVariants}>
                     <Heading mr="5" size="9">
@@ -160,80 +163,63 @@ export default function Home() {
                 </motion.div>
               </Box>
               
-              <Box>
-                <Flex direction="row" align="center">
-                  <motion.div variants={itemVariants}>
-                    <Text
-                      style={{ width: "50%" }}
-                      size="5"
-                      ml="2"
-                      align="center"
-                      mr="8"
+              <Box mt="4" mb="2">
+                <motion.div variants={itemVariants}>
+                  <Text size="5" ml="4" weight="bold" mb="2">
+                    I have experience in:
+                  </Text>
+                  <Separator size="4" mt="1" mb="3" />
+                </motion.div>
+                
+                <motion.div
+                  variants={techStackVariants}
+                  className="flex flex-row items-center justify-center gap-4 mx-4 flex-wrap"
+                >
+                  {[
+                    { 
+                      component: PythonLogo,
+                      label: "Python" 
+                    },
+                    { 
+                      component: JavaLogo,
+                      label: "Java" 
+                    },
+                    { 
+                      component: MongoDBLogo,
+                      label: "MongoDB" 
+                    },
+                    { 
+                      component: PostgreSQLLogo,
+                      label: "PostgreSQL" 
+                    },
+                    { 
+                      component: GoLogo,
+                      label: "Go",
+                      width: "70",
+                      height: "70"
+                    },
+                    { 
+                      component: FlutterLogo,
+                      label: "Flutter" 
+                    }
+                  ].map((tech, index) => (
+                    <motion.div 
+                      key={index}
+                      className="flex flex-col items-center mx-3 my-2"
+                      variants={techItemVariants} 
+                      whileHover="hover"
                     >
-                      I have experience in:
-                    </Text>
-                  </motion.div>
-                  
-                  <motion.div
-                    variants={techStackVariants}
-                    className="flex flex-row items-center justify-between w-full mr-6 flex-wrap"
-                  >
-                    <motion.div variants={techItemVariants} whileHover="hover">
-                      <PythonLogo
-                        fill={
-                          accentColor === "crimson" ? logoDarkColor : logoLightColor
-                        }
-                        width="50"
-                        height="50"
-                      />
+                      {React.createElement(tech.component, {
+                        fill: accentColor === "crimson" ? logoDarkColor : logoLightColor,
+                        width: tech.width || "50",
+                        height: tech.height || "50"
+                      })}
+                      <Text size="2" mt="1" align="center" className="opacity-80">
+                        {tech.label}
+                      </Text>
                     </motion.div>
-                    <motion.div variants={techItemVariants} whileHover="hover">
-                      <JavaLogo
-                        fill={
-                          accentColor === "crimson" ? logoDarkColor : logoLightColor
-                        }
-                        width="50"
-                        height="50"
-                      />
-                    </motion.div>
-                    <motion.div variants={techItemVariants} whileHover="hover">
-                      <MongoDBLogo
-                        fill={
-                          accentColor === "crimson" ? logoDarkColor : logoLightColor
-                        }
-                        width="50"
-                        height="50"
-                      />
-                    </motion.div>
-                    <motion.div variants={techItemVariants} whileHover="hover">
-                      <PostgreSQLLogo
-                        fill={
-                          accentColor === "crimson" ? logoDarkColor : logoLightColor
-                        }
-                        width="50"
-                        height="50"
-                      />
-                    </motion.div>
-                    <motion.div variants={techItemVariants} whileHover="hover">
-                      <GoLogo
-                        fill={
-                          accentColor === "crimson" ? logoDarkColor : logoLightColor
-                        }
-                        width="70"
-                        height="70"
-                      />
-                    </motion.div>
-                    <motion.div variants={techItemVariants} whileHover="hover">
-                      <FlutterLogo
-                        fill={
-                          accentColor === "crimson" ? logoDarkColor : logoLightColor
-                        }
-                        width="50"
-                        height="50"
-                      />
-                    </motion.div>
-                  </motion.div>
-                </Flex>
+                  ))}
+                </motion.div>
               </Box>
             </Card>
           </motion.div>

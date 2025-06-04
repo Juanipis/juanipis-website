@@ -122,7 +122,7 @@ function AboutMe() {
               
               <motion.div variants={itemVariants}>
                 <Heading size="6" weight="light" align="center">
-                  Backend developer
+                  Software Engineer
                 </Heading>
               </motion.div>
               
