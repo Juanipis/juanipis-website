@@ -1,3 +1,4 @@
+/* Avatar styles */
 .AvatarRoot {
   display: inline-flex;
   align-items: center;
@@ -5,10 +6,18 @@
   vertical-align: middle;
   overflow: hidden;
   user-select: none;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border-radius: 100%;
   background-color: var(--black-a3);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .AvatarRoot {
+    width: 45px;
+    height: 45px;
+  }
 }
 
 .AvatarImage {
@@ -29,4 +38,71 @@
   font-size: 15px;
   line-height: 1;
   font-weight: 500;
+}
+
+/* Navbar layout styles */
+.navbarWrapper {
+  width: 100%;
+}
+
+.navbarCard {
+  padding: 0.5rem;
+  height: auto !important;
+  transition: all 0.3s ease;
+}
+
+.navbarContainer {
+  padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .navbarCard {
+    padding: 0.75rem;
+  }
+  
+  .navbarContainer {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Logo and navigation sections */
+.logoSection {
+  display: flex;
+  align-items: center;
+}
+
+.logoLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.avatarContainer {
+  margin-right: 0.5rem;
+}
+
+.siteHeading {
+  margin: 0;
+  transition: font-size 0.3s ease;
+}
+
+.navigationSection {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .navbarContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .logoSection {
+    flex: 1;
+  }
+  
+  .navigationSection {
+    margin-left: auto;
+  }
 }

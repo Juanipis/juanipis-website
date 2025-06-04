@@ -10,6 +10,9 @@ import { Favicon } from "../../components/Favicon";
 import { useEffect } from "react";
 import { Theme } from "@radix-ui/themes";
 import Navbar from "../../components/ui/navbar/navbar";
+import FloatingActionButton from "../../components/ui/floatingActionButton/floatingActionButton";
+import PageTransition from "../../components/ui/pageTransition/pageTransition";
+import AOS from 'aos';
 
 function Pages({ Component, pageProps }: AppProps) {
   const { accentColor } = useCssLibPreference();
@@ -17,6 +20,15 @@ function Pages({ Component, pageProps }: AppProps) {
   useEffect(() => {
     document.documentElement.style.setProperty("--accent-color", accentColor);
   }, [accentColor]);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 100,
+    });
+  }, []);
 
   return (
     <Theme
@@ -29,7 +41,10 @@ function Pages({ Component, pageProps }: AppProps) {
     >
       <Favicon />
       <Navbar />
-      <Component {...pageProps} />
+      <PageTransition>
+        <Component {...pageProps} />
+      </PageTransition>
+      <FloatingActionButton />
     </Theme>
   );
 }

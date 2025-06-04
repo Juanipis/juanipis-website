@@ -1,4 +1,7 @@
 import { Flex } from "@radix-ui/themes";
+import Head from "next/head";
+import ProjectCard from "../../components/ui/projectCard/projectCard";
+import { motion } from "framer-motion";
 import {
   PostgreSQLLogo,
   PythonLogo,
@@ -19,15 +22,33 @@ import {
   RaspberryPiLogo,
   IBMCloudLogo,
   PowerAutomateLogo,
-  // Assuming you might add these or have them elsewhere:
-  // Survey123Logo,
-  // ArcGISLogo,
 } from "../../components/ui/logos/logos";
-import ProjectCard from "../../components/ui/projectCard/projectCard";
-import Head from "next/head";
 import NestjsLogo from "../../components/ui/logos/nestjsLogo";
 
 function Projects() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       <Head>
@@ -37,7 +58,32 @@ function Projects() {
           content="Juanipis personal website, projects"
         />
       </Head>
-      <Flex ml="3" mr="2" mt="5" gap="7" justify="center" wrap="wrap">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className="pt-8" // Added top padding here
+      >
+        <motion.div variants={titleVariants} className="text-center mb-8">
+          <motion.h1 
+            className="text-4xl font-bold mb-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: "backOut" }}
+          >
+            My Projects 🚀
+          </motion.h1>
+          <motion.p 
+            className="text-lg text-gray-600"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            Here are some of the projects I've worked on
+          </motion.p>
+        </motion.div>
+        
+        <Flex ml="3" mr="2" mt="5" gap="7" justify="center" wrap="wrap">
         <ProjectCard
           title={"DataTrip 📊"}
           description={
@@ -73,7 +119,7 @@ function Projects() {
           url={"https://github.com/pablomesa08/backend-miyuki"}
         />
         <ProjectCard
-          title={"Who's that Pokémon? 🤔"}
+          title={"Who&apos;s that Pokémon? 🤔"}
           description={"Guess the Pokémon by its silhouette."}
           image="/banner_images/pokemon.webp"
           technologies={[FlutterLogo]}
@@ -183,7 +229,8 @@ function Projects() {
           technologies={[PythonLogo, LinuxLogo, RaspberryPiLogo]}
           url={"https://github.com/Juanipis/QuimeraEyes"}
         />
-      </Flex>
+        </Flex>
+      </motion.div>
     </>
   );
 }
