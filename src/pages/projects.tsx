@@ -79,7 +79,7 @@ function Projects() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            Here are some of the projects I've worked on
+            Here are some of the projects I&apos;ve worked on
           </motion.p>
         </motion.div>
         

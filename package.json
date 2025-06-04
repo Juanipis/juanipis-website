@@ -1,5 +1,5 @@
 {
-  "name": "personal-nextjs-radix-page",
+  "name": "juanipis-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,7 +21,8 @@
     "next": "^14.2.5",
     "next-themes": "^0.2.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sharp": "^0.34.2"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
