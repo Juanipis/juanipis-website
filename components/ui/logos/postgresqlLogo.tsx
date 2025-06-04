@@ -1,5 +1,13 @@
 import React from "react";
 
+// Assuming SvgProps is defined here, or should be if it's not imported
+interface SvgProps {
+  fill?: string;
+  width?: string; // Changed from string | number
+  height?: string; // Changed from string | number
+  className?: string; // Added className for consistency if missing
+}
+
 const PostgreSQLLogo: React.FC<SvgProps> = ({
   fill = "#000000",
   width = "800px",

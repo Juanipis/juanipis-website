@@ -18,6 +18,10 @@ import {
   TypescriptLogo,
   RaspberryPiLogo,
   IBMCloudLogo,
+  PowerAutomateLogo,
+  // Assuming you might add these or have them elsewhere:
+  // Survey123Logo,
+  // ArcGISLogo,
 } from "../../components/ui/logos/logos";
 import ProjectCard from "../../components/ui/projectCard/projectCard";
 import Head from "next/head";
@@ -34,7 +38,20 @@ function Projects() {
         />
       </Head>
       <Flex ml="3" mr="2" mt="5" gap="7" justify="center" wrap="wrap">
-      <ProjectCard
+        <ProjectCard
+          title={"DataTrip 📊"}
+          description={
+            "Desktop app for Survey123 data: extracts georeferenced photos, transcribes voice notes with AI, and generates Excel reports."
+          }
+          image="/banner_images/datatrip.webp" // Update this with the correct image path
+          technologies={[
+            PythonLogo,
+            FlutterLogo,
+            PowerAutomateLogo
+          ]}
+          url={"#"} // Add a relevant URL if available
+        />
+        <ProjectCard
           title={"Dance club Comuna 8 🕺"}
           description={"A web app for a dance club in Medellín."}
           image="/banner_images/dance_club.webp"

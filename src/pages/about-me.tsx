@@ -130,6 +130,53 @@ function AboutMe() {
                 <ExperienceLine>
                   <ExperienceItem>
                     <Flex direction="column">
+                      <Heading size="3">Intern</Heading>
+                      <Text>Jan 2025 - Jul 2025</Text>
+                      <Text weight="medium">
+                        <a href="https://www.isa.co/">
+                          ISA Interconexión Eléctrica S.A. E.S.P.
+                        </a>
+                      </Text>
+                      <Text>
+                        Contributed to the digitization of field visit
+                        processes and development of data processing tools.
+                      </Text>
+                      <ul className=" ml-5" style={{ listStyleType: "disc" }}>
+                        <li>
+                          Replaced a manual Excel-based process with a smart
+                          form in Survey123 for the Substation Coordination
+                          area, enabling capture of georeferenced photos, voice
+                          notes, text, and multiple-choice selections, with
+                          data automatically sent via webhook to a SharePoint
+                          site (DataTrip).
+                        </li>
+                        <li>
+                          Developed a desktop application using Python and the
+                          Flet framework (based on Flutter) to process this
+                          data: JSON and multimedia files were extracted from
+                          each visit, automatically generating an Excel report.
+                          Voice notes were transcribed locally using AI with the
+                          faster-whisper model.
+                        </li>
+                        <li>
+                          The application also exports georeferenced images to a
+                          .kmz file, allowing easy visualization in Google
+                          Earth.
+                        </li>
+                        <li>
+                          Packaged the application as an executable installer
+                          for Windows, facilitating its distribution and
+                          installation.
+                        </li>
+                        <li>
+                          Technologies Used: Python, Flutter (Flet), Microsoft
+                          Power Automate, ArcGIS, Survey123.
+                        </li>
+                      </ul>
+                    </Flex>
+                  </ExperienceItem>
+                  <ExperienceItem>
+                    <Flex direction="column">
                       <Heading size="3">Fullstack developer</Heading>
                       <Text>Jun 2023 - Feb 2024</Text>
                       <Text weight="medium">
@@ -231,6 +278,7 @@ function AboutMe() {
                     <Text>Communication</Text>
                     <Text>Adaptability</Text>
                     <Text>Time management</Text>
+                    <Text>Vibe coding</Text>
                   </Flex>
                 </Box>
               </section>

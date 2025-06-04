@@ -23,3 +23,4 @@ export { default as LinkedInLogo } from "./linkedinLogo";
 export { default as TwitterXLogo } from "./twitterXLogo";
 export { default as InstagramLogo } from "./instagramLogo";
 export { default as GitHubLogo } from "./githubLogo";
+export { default as PowerAutomateLogo } from "./powerAutomateLogo";
