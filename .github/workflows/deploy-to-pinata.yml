@@ -40,17 +40,30 @@ jobs:
       - name: Upload to Pinata
         id: upload
         run: |
-          response=$(curl -X POST "https://api.pinata.cloud/pinning/pinFileToIPFS" \
+          response=$(curl -X POST "https://uploads.pinata.cloud/v3/files" \
             -H "Authorization: Bearer ${{ secrets.PINATA_JWT }}" \
             -F "file=@website.tar.gz" \
-            -F "pinataMetadata={\"name\":\"juanipis-website-$(date +%Y%m%d-%H%M%S)\"}" \
-            -F "pinataOptions={\"cidVersion\":1}")
+            -F "name=juanipis-website-$(date +%Y%m%d-%H%M%S)" \
+            -F "network=public")
 
           echo "Upload response: $response"
 
-          # Extract IPFS hash from response
-          ipfs_hash=$(echo $response | grep -o '"IpfsHash":"[^"]*' | cut -d'"' -f4)
+          # Check for errors
+          if echo "$response" | grep -q "error"; then
+            echo "❌ Upload failed with error:"
+            echo "$response"
+            exit 1
+          fi
+
+          # Extract IPFS hash from V3 API response
+          ipfs_hash=$(echo $response | grep -o '"cid":"[^"]*' | cut -d'"' -f4)
           echo "IPFS Hash: $ipfs_hash"
+
+          if [ -z "$ipfs_hash" ]; then
+            echo "❌ Failed to extract IPFS hash from response"
+            echo "Full response: $response"
+            exit 1
+          fi
 
           # Save to GitHub outputs
           echo "ipfs_hash=$ipfs_hash" >> $GITHUB_OUTPUT
