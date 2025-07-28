@@ -30,33 +30,35 @@ jobs:
           ls -la out/
           echo "Build completed successfully"
 
-      - name: Create tar.gz archive
+      - name: Prepare files for upload
         run: |
+          # Create a single tar file that Pinata will extract and serve properly
           cd out
-          tar -czf ../website.tar.gz .
+          tar -cf ../website-directory.tar *
           cd ..
-          ls -la website.tar.gz
+          ls -la website-directory.tar
 
-      - name: Upload to Pinata
+      - name: Upload directory to Pinata
         id: upload
         run: |
-          response=$(curl -X POST "https://uploads.pinata.cloud/v3/files" \
+          # Use the legacy endpoint which supports directory uploads
+          response=$(curl -s -X POST "https://api.pinata.cloud/pinning/pinFileToIPFS" \
             -H "Authorization: Bearer ${{ secrets.PINATA_JWT }}" \
-            -F "file=@website.tar.gz" \
-            -F "name=juanipis-website-$(date +%Y%m%d-%H%M%S)" \
-            -F "network=public")
+            -F "file=@website-directory.tar" \
+            -F "pinataMetadata={\"name\":\"juanipis-website-$(date +%Y%m%d-%H%M%S)\",\"keyvalues\":{\"type\":\"static-site\",\"framework\":\"nextjs\"}}" \
+            -F "pinataOptions={\"cidVersion\":1,\"wrapWithDirectory\":false}")
 
           echo "Upload response: $response"
 
           # Check for errors
-          if echo "$response" | grep -q "error"; then
+          if echo "$response" | grep -q '"error"'; then
             echo "❌ Upload failed with error:"
             echo "$response"
             exit 1
           fi
 
-          # Extract IPFS hash from V3 API response
-          ipfs_hash=$(echo $response | grep -o '"cid":"[^"]*' | cut -d'"' -f4)
+          # Extract IPFS hash from response
+          ipfs_hash=$(echo "$response" | grep -o '"IpfsHash":"[^"]*' | cut -d'"' -f4)
           echo "IPFS Hash: $ipfs_hash"
 
           if [ -z "$ipfs_hash" ]; then
@@ -64,6 +66,8 @@ jobs:
             echo "Full response: $response"
             exit 1
           fi
+
+          echo "✅ Successfully uploaded to IPFS: $ipfs_hash"
 
           # Save to GitHub outputs
           echo "ipfs_hash=$ipfs_hash" >> $GITHUB_OUTPUT
