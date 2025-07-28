@@ -1,0 +1,64 @@
+name: Deploy to Pinata
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: # Permite ejecutar manualmente
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          ls -la out/
+          echo "Build completed successfully"
+
+      - name: Create tar.gz archive
+        run: |
+          cd out
+          tar -czf ../website.tar.gz .
+          cd ..
+          ls -la website.tar.gz
+
+      - name: Upload to Pinata
+        id: upload
+        run: |
+          response=$(curl -X POST "https://api.pinata.cloud/pinning/pinFileToIPFS" \
+            -H "Authorization: Bearer ${{ secrets.PINATA_JWT }}" \
+            -F "file=@website.tar.gz" \
+            -F "pinataMetadata={\"name\":\"juanipis-website-$(date +%Y%m%d-%H%M%S)\"}" \
+            -F "pinataOptions={\"cidVersion\":1}")
+
+          echo "Upload response: $response"
+
+          # Extract IPFS hash from response
+          ipfs_hash=$(echo $response | grep -o '"IpfsHash":"[^"]*' | cut -d'"' -f4)
+          echo "IPFS Hash: $ipfs_hash"
+
+          # Save to GitHub outputs
+          echo "ipfs_hash=$ipfs_hash" >> $GITHUB_OUTPUT
+          echo "gateway_url=https://gateway.pinata.cloud/ipfs/$ipfs_hash" >> $GITHUB_OUTPUT
+
+      - name: Create deployment summary
+        run: |
+          echo "## 🎉 Website deployed to IPFS!" >> $GITHUB_STEP_SUMMARY
+          echo "**IPFS Hash:** ${{ steps.upload.outputs.ipfs_hash }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Gateway URL:** ${{ steps.upload.outputs.gateway_url }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Deployment Time:** $(date)" >> $GITHUB_STEP_SUMMARY
