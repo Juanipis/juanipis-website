@@ -37,7 +37,7 @@ jobs:
         run: |
           # Install Node.js dependencies for multipart upload
           npm init -y
-          npm install form-data node-fetch
+          npm install form-data node-fetch@2
 
           # Create upload script
           cat > upload-v3.js << 'EOF'
@@ -50,6 +50,7 @@ jobs:
             try {
               const form = new FormData();
               const outDir = './out';
+              let fileCount = 0;
               
               // Function to recursively add files to form
               function addFilesToForm(dir, basePath = '') {
@@ -67,6 +68,8 @@ jobs:
                       filename: relativePath,
                       contentType: getMimeType(filePath)
                     });
+                    fileCount++;
+                    console.log(`Added file: ${relativePath}`);
                   }
                 });
               }
@@ -91,13 +94,16 @@ jobs:
                 return mimeTypes[ext] || 'application/octet-stream';
               }
               
+              console.log('Starting file collection...');
               // Add all files from out directory
               addFilesToForm(outDir);
+              console.log(`Total files to upload: ${fileCount}`);
               
               // Add metadata
               form.append('name', `juanipis-website-${new Date().toISOString().slice(0,19).replace(/[:-]/g, '')}`);
               form.append('network', 'public');
               
+              console.log('Uploading to Pinata V3...');
               // Upload to Pinata V3
               const response = await fetch('https://uploads.pinata.cloud/v3/files', {
                 method: 'POST',
@@ -108,9 +114,13 @@ jobs:
                 body: form
               });
               
-              const result = await response.json();
+              console.log('Response status:', response.status);
+              console.log('Response headers:', Object.fromEntries(response.headers.entries()));
               
-              if (result.error) {
+              const result = await response.json();
+              console.log('Response body:', JSON.stringify(result, null, 2));
+              
+              if (!response.ok || result.error) {
                 console.error('Upload failed:', JSON.stringify(result, null, 2));
                 process.exit(1);
               }
@@ -125,7 +135,8 @@ jobs:
               );
               
             } catch (error) {
-              console.error('Error:', error);
+              console.error('Error:', error.message);
+              console.error('Stack:', error.stack);
               process.exit(1);
             }
           }
